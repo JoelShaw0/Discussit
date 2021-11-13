@@ -17,7 +17,7 @@ exports.setApp = function (app) {
         const newDiscussion = {discussionId: discussionId, title: title, description: description, dateCreated: dateCreated, tags: tags, categories: categories};
         const token = req.authToken;
   
-        var path = "/discussions/";
+        var path = "/creatediscussion";
         var ret;
         var error = '';
         try {
@@ -41,7 +41,7 @@ exports.setApp = function (app) {
   
         var ret;
         var error = '';
-        var path = '/discussions/' + req.params.discussionId;
+        var path = '/viewdiscussions/' + req.params.discussionId;
         try {
           // Attempts to post the JSON discussion to the database.
           var result = await FBEndpoints.getValueAtPath(token, path);
@@ -63,7 +63,7 @@ exports.setApp = function (app) {
         const updatedDiscussion = {discussionId: discussionId, title: title, description: description, dateCreated: dateCreated, tags: tags, categories: categories};
         const token = req.authToken;
   
-        var path = '/discussions/' + req.params.discussionId;
+        var path = '/viewdiscussions/' + req.params.discussionId;
         var ret;
         var error = '';
         try {
@@ -82,7 +82,7 @@ exports.setApp = function (app) {
     // Deletes a discussion.
     app.post('/api/discussions/:discussionId/delete', async (req, res, next) => {
   
-        var path = '/discussions/' + req.params.discussionId;
+        var path = '/viewdiscussions/' + req.params.discussionId;
         var ret;
         var error = '';
         try {
@@ -108,7 +108,7 @@ exports.setApp = function (app) {
                  .endAt(searchString+"\uf8ff")
         var ret;
         var error = '';
-        var path = '/discussions/';
+        var path = '/';
         try {
           // Attempts to post the JSON discussion to the database.
           var result = await FBEndpoints.getValueAtPath(token, path) ?? [];

@@ -1,5 +1,4 @@
 const FBEndpoints = require('./utils/firebase-endpoints');
-const FB = require('firebase');
 
 exports.setApp = function (app) {
 
@@ -10,7 +9,7 @@ exports.setApp = function (app) {
     */
 
     // Creates a new discussion
-    app.post('/api/discussions/create', async (req, res, next) => {
+    app.post('/creatediscussion', async (req, res, next) => {
 
         // Stores the inputted discussion in JSON format.
         const {discussionId, title, description, dateCreated, tags, categories} = req.body;
@@ -34,7 +33,7 @@ exports.setApp = function (app) {
     })
 
     // Reads a discussion.
-    app.get('/api/discussions/:discussionId', async (req, res, next) => {
+    app.get('/viewdiscussions/:discussionId', async (req, res, next) => {
 
         // Stores the inputted disscussion in JSON format.
         const token = req.authToken;
@@ -56,14 +55,14 @@ exports.setApp = function (app) {
 
 
     // Updates a discussion
-    app.post('/api/discussions/:discussionId/update', async (req, res, next) => {
+    app.post('/updatediscussion', async (req, res, next) => {
 
         // Stores the inputted discussion in JSON format.
         const {discussionId, title, description, dateCreated, tags, categories} = req.body;
         const updatedDiscussion = {discussionId: discussionId, title: title, description: description, dateCreated: dateCreated, tags: tags, categories: categories};
         const token = req.authToken;
   
-        var path = '/viewdiscussions/' + req.params.discussionId;
+        var path = '/updatediscussion/' + req.params.discussionId;
         var ret;
         var error = '';
         try {
@@ -80,7 +79,7 @@ exports.setApp = function (app) {
     })
 
     // Deletes a discussion.
-    app.post('/api/discussions/:discussionId/delete', async (req, res, next) => {
+    app.post('/viewdiscussion/:discussionId/delete', async (req, res, next) => {
   
         var path = '/viewdiscussions/' + req.params.discussionId;
         var ret;
@@ -99,7 +98,7 @@ exports.setApp = function (app) {
     })
 
     // Searches Discussions.
-    app.get('/api/discussions/search', async (req, res, next) => {
+    app.get('/', async (req, res, next) => {
         const token = req.authToken;
         const searchString = req.body;
 

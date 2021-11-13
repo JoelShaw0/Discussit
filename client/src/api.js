@@ -1,4 +1,5 @@
 const FBEndpoints = require('./utils/firebase-endpoints');
+const FB = require('firebase');
 
 exports.setApp = function (app) {
 
@@ -11,7 +12,7 @@ exports.setApp = function (app) {
     // Creates a new discussion
     app.post('/api/discussions/create', async (req, res, next) => {
 
-        // Stores the inputted exercise in JSON format.
+        // Stores the inputted discussion in JSON format.
         const {discussionId, title, description, dateCreated, tags, categories} = req.body;
         const newDiscussion = {discussionId: discussionId, title: title, description: description, dateCreated: dateCreated, tags: tags, categories: categories};
         const token = req.authToken;
@@ -35,7 +36,7 @@ exports.setApp = function (app) {
     // Reads a discussion.
     app.get('/api/discussions/:discussionId', async (req, res, next) => {
 
-        // Stores the inputted exercise in JSON format.
+        // Stores the inputted disscussion in JSON format.
         const token = req.authToken;
   
         var ret;
@@ -44,7 +45,7 @@ exports.setApp = function (app) {
         try {
           // Attempts to post the JSON discussion to the database.
           var result = await FBEndpoints.getValueAtPath(token, path);
-          res.status(200).json(ret);
+          res.status(200).json(result);
         } catch (e) {
           // Prints any error that occurs.
           error = e.toString();
@@ -57,7 +58,7 @@ exports.setApp = function (app) {
     // Updates a discussion
     app.post('/api/discussions/:discussionId/update', async (req, res, next) => {
 
-        // Stores the inputted exercise in JSON format.
+        // Stores the inputted discussion in JSON format.
         const {discussionId, title, description, dateCreated, tags, categories} = req.body;
         const updatedDiscussion = {discussionId: discussionId, title: title, description: description, dateCreated: dateCreated, tags: tags, categories: categories};
         const token = req.authToken;
@@ -93,6 +94,29 @@ exports.setApp = function (app) {
           // Prints any error that occurs.
           error = e.toString();
           ret = {message: "Error deleting discussion", error: error};
+          res.status(400).json(ret);
+        }
+    })
+
+    // Searches Discussions.
+    app.get('/api/discussions/search', async (req, res, next) => {
+        const token = req.authToken;
+        const searchString = req.body;
+
+        databaseReference.orderByChild('discussions')
+                 .startAt(searchString)
+                 .endAt(searchString+"\uf8ff")
+        var ret;
+        var error = '';
+        var path = '/discussions/';
+        try {
+          // Attempts to post the JSON discussion to the database.
+          var result = await FBEndpoints.getValueAtPath(token, path) ?? [];
+          res.status(200).json(result);
+        } catch (e) {
+          // Prints any error that occurs.
+          error = e.toString();
+          ret = {message: "Error finding discussion", error: error};
           res.status(400).json(ret);
         }
     })

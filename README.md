@@ -6,9 +6,9 @@ A project was done for the 2021 Knight Hacks Hackathon. A platform similar to Re
 
 Link: https://discussit.tech/
 
-Video: 
+Video: https://youtu.be/YOaJve_nPKw
 
-DevPost Submission:
+DevPost Submission: https://devpost.com/software/discussit
 
 Figma: https://www.figma.com/file/ETSlUTxyo3SB1q5uPNeeRi/Knight-Hacks?node-id=1%3A11
 

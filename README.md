@@ -1,11 +1,15 @@
 # Discussit
 
 A project was done for the 2021 Knight Hacks Hackathon. A platform similar to Reddit however instead of forming close-knit communities of like-minded people unites all people from many different backgrounds. It does this by having people create and find discussion posts where they can discuss various topics. The goal of the project was to experiment with creating a platform that exposes people to other people's opinions while still being able to maintain a friendly dialogue.
+
 ## Go Try it out [Here]discussit.tech
 
 Link: discussit.tech
+
 Video: 
+
 DevPost Submission:
+
 Figma: https://www.figma.com/file/ETSlUTxyo3SB1q5uPNeeRi/Knight-Hacks?node-id=1%3A11
 
 ## 💡 Inspiration

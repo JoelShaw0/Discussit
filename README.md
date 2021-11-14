@@ -14,8 +14,10 @@ Figma: https://www.figma.com/file/ETSlUTxyo3SB1q5uPNeeRi/Knight-Hacks?node-id=1%
 
 ## 💡 Inspiration
 The inspiration many came from wanting a platform to connect people with those they would not normally interact with. Many social media platforms today by their design seek to connect similar people together but not different. Additionally, it is increasingly difficult for people who disagree to discuss issues online or in person for a variety of reasons. Discussit seeks to create a social media site where people can post and participate in friendly discussions with a variety of different people. Ultimately, we want to give room for people to explain their reasoning and views while also listening to others even if they don't agree.
+
 ## 💻 What it does
 Essentially the application facilitates friendly discussion between people. Users can sign in or sign up on to the platform. After entering the platform, the user is brought to a home screen where they can search discussions and see the most recently posted discussions. They can also choose to go to the Create Discussion page where they can create their own discussion post for others to take part in. After choosing a discussion the user would like to participate in, they are taken to the View Discussion page. On the view discussion page, they are assigned to a small chat room where they are able to converse with other people who also want to talk about the topic. The user also has the option to leave the room via the CoolDown button. Clicking the CoolDown button causes a pop up to appear asking information about what occurred and askes if the user has anyone to report. Then they are taken back to the home screen. There is also a chatbot that can assist the user if they have any issues navigating the platform. Although we were not able to get all the functionality working this is how we envisioned the application to function.
+
 ## ⚙️ How we built it
 
 - Frontend: React Js
@@ -32,6 +34,8 @@ Essentially the application facilitates friendly discussion between people. User
 
 ## 🧠 Challenges we ran into
 
+We had a lot of compatibility issues. Our backend was never able to connect to our front end due to difficulty with the compatibility of Firebase and the Cloudflare host. None of us initially knew how to set up the hosting, so that was a challenge to figure out. Lastly, due to time zone differences, we had a harder time working together as a group.
+
 ## 🏅 Accomplishments that we're proud of
 
 - Completing a project
@@ -46,3 +50,4 @@ Essentially the application facilitates friendly discussion between people. User
 
 ## 🚀 What's next for Discussit
 
+We feel the idea could be applied in some form of social media even if not our own. We believe the idea of discussion among small groups who don't know one another can lead to bad outcomes if not carefully monitored, but if it is monitored can also lead to amazing discoveries, discussions, ideas, and even friends. We would like to continue the project if possible, and if not to hold on to the idea and suggest it to larger social media platforms.

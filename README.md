@@ -25,10 +25,6 @@ Essentially the application facilitates friendly discussion between people. User
 - Prototyping: Figma
 - Server Hosting: CloudFlare with a Domain.com domain
 
-## Best Domain Name from Domain.com
-
--
-
 ## Facebook - Express Yourself
 
 ## ⛅ Use of Google Cloud

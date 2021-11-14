@@ -25,8 +25,6 @@ Essentially the application facilitates friendly discussion between people. User
 - Prototyping: Figma
 - Server Hosting: CloudFlare with a Domain.com domain
 
-## Facebook - Express Yourself
-
 ## ⛅ Use of Google Cloud
 
 - We built Discussit's authentication system with Google Cloud's Firebase. We chose this because we wanted to make an application that was very very secure. We learned how robust & fast Google Cloud services are and seeing that Firebase had a free plan that was great for us student hackers, using Google Cloud was kind of a no-brainer.
